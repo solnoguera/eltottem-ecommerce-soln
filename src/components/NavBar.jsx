@@ -12,18 +12,21 @@ import {
     DropdownMenu,
     DropdownItem
 } from 'reactstrap'
+import logo from '../assets/eltottemlogo.png'
 
 export default function NavBar (){
     return (
         <div>
+        
         <Navbar
             color="danger"
             dark
             expand="md"
             light
         >
+            <img src={logo} alt="logo" width="3%" height="5%" style={{ marginRight:15 }} />
             <NavbarBrand href="/">
-            El Tottem Pizzeria
+              El Tottem Pizzería
             </NavbarBrand>
             <NavbarToggler/>
             <Collapse navbar>
@@ -32,6 +35,12 @@ export default function NavBar (){
                 navbar
             >
                 <NavItem>
+                    <NavLink href="/">
+                        Home
+                    </NavLink>
+                </NavItem>
+
+                <NavItem>
                     <NavLink href="/about">
                         Nosotros
                     </NavLink>
@@ -39,7 +48,7 @@ export default function NavBar (){
 
                 <NavItem>
                     <NavLink href="/promos">
-                        Promos
+                        Promociones
                     </NavLink>
                 </NavItem>
 
@@ -54,14 +63,22 @@ export default function NavBar (){
                     <DropdownItem divider />
                     <DropdownItem> Empanadas </DropdownItem>
                     <DropdownItem divider />
+                    <DropdownItem> Empanadas Premium</DropdownItem>
+                    <DropdownItem divider />
                     <DropdownItem> Tartas </DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem> Sandwiches </DropdownItem>
                     <DropdownItem divider />
-                    <DropdownItem> Contactanos </DropdownItem>
+                    <DropdownItem> Minutas </DropdownItem>
                     <DropdownItem divider />
+                    <DropdownItem> Bebidas </DropdownItem>
                 </DropdownMenu>
                 </UncontrolledDropdown>
+                <NavItem>
+                    <NavLink href="/contacto">
+                        Contactanos
+                    </NavLink>
+                </NavItem>
             </Nav>
             </Collapse>
         </Navbar>
