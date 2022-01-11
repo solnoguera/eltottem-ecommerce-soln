@@ -1,14 +1,23 @@
 import React from "react";
-import {
-  Nav,
-  Navbar,
-  Container,
-  NavDropdown
-} from "react-bootstrap";
+import { Nav, Navbar, Container } from "react-bootstrap";
 import logo from "../../assets/tottemlogo.png";
 import './NavBar.css'
+import NavDropDown from "../NavDropDown/NavDropDown"
 
 export default function NavBar() {
+
+  const items = [
+    { name : 'Promociones', link : '/promociones'},
+    { name : 'Pizzas', link : '/pizzas'},
+    { name : 'Empanadas', link : '/empanadas'},
+    { name : 'Empanadas Premium', link : '/empanadas-premium'},
+    { name : 'Tartas', link : '/tartas'},
+    { name : 'Sandwiches', link : '/sandwiches'},
+    { name : 'Hamburguesas', link : '/hamburguesas'},
+    { name : 'Minutas', link : '/minutas'},
+    { name : 'Bebidas', link : '/bebidas'}
+  ]
+
   return (
     <Navbar variant="light" expand="lg" className='fondoRojo' >
       <Container>
@@ -19,25 +28,9 @@ export default function NavBar() {
           <Nav className="me-auto" navbarScroll>
             <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/nosotros">Nosotros</Nav.Link>
-            <NavDropdown title="Productos" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/promociones">Promociones</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/pizzas">Pizzas</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/empanadas">Empanadas</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/empanadas-premium">Empanadas Premium</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/tartas">Tartas</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/sandwiches">Sandwiches</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/hamburguesas">Hamburguesas</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/minutas">Minutas</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/bebidas">Bebidas</NavDropdown.Item>
-            </NavDropdown>
+            
+            <NavDropDown title='Productos' items={items} />
+
             <Nav.Link href="/contacto">Contactanos</Nav.Link>
           </Nav>
         </Navbar.Collapse>
