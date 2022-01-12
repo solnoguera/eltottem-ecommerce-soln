@@ -3,6 +3,8 @@ import { Nav, Navbar, Container } from "react-bootstrap";
 import logo from "../../assets/tottemlogo.png";
 import './NavBar.css'
 import NavDropDown from "../NavDropDown/NavDropDown"
+import CartWidget from "../CartWidget/CartWidget";
+
 
 export default function NavBar() {
 
@@ -34,6 +36,9 @@ export default function NavBar() {
             <Nav.Link href="/contacto">Contactanos</Nav.Link>
           </Nav>
         </Navbar.Collapse>
+
+        <CartWidget />
+        
       </Container>
     </Navbar>
   );
