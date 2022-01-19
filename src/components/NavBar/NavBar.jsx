@@ -5,7 +5,6 @@ import './NavBar.css'
 import NavDropDown from "../NavDropDown/NavDropDown"
 import CartWidget from "../CartWidget/CartWidget";
 
-
 export default function NavBar() {
 
   const items = [
@@ -23,11 +22,11 @@ export default function NavBar() {
   return (
     <Navbar variant="light" expand="lg" className='fondoRojo' >
       <Container>
-      <img src={logo} alt="logo" width="10%" height="15%" style={{ marginRight:25 }} />
-        <Navbar.Brand> Tienda Online El Tottem</Navbar.Brand>
+      <img src={logo} alt="logo" width="12%" height="10%" style={{ marginRight:25 }} />
+        <Navbar.Brand className='letra'> Tienda Online El Tottem</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto" navbarScroll>
+          <Nav className="me-auto letra" navbarScroll>
             <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/nosotros">Nosotros</Nav.Link>
             
