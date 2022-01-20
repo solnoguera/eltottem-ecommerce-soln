@@ -23,7 +23,7 @@ export default function NavBar() {
     <Navbar variant="light" expand="lg" className='fondoRojo' >
       <Container>
       <img src={logo} alt="logo" width="12%" height="10%" style={{ marginRight:25 }} />
-        <Navbar.Brand className='letra'> Tienda Online El Tottem</Navbar.Brand>
+        <Navbar.Brand className='letra'> Tienda El Tottem</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto letra" navbarScroll>

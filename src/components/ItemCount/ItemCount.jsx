@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import {Button, ButtonGroup} from 'react-bootstrap'
 import swall from "sweetalert"
-import {Card} from 'react-materialize'
 import './ItemCount.css'
 
 const ItemCount = ({initial, stock}) => {
@@ -28,8 +27,7 @@ const ItemCount = ({initial, stock}) => {
     }
 
     return (
-        <Card className='card' 
-        closeIcon={<></>}>
+        <div className='card'>
                 <ButtonGroup className='delineado ancho-counter'>
                     <Button variant="light" onClick={restar}>-</Button>
                     <Button className='counter' variant="light">{counter}</Button>
@@ -37,7 +35,7 @@ const ItemCount = ({initial, stock}) => {
                 </ButtonGroup>
                 <Button className='add-to-cart' variant='danger' 
                         onClick={onAdd}>Agregar al carrito</Button>
-        </Card>
+        </div>
     )
 }
 

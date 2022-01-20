@@ -1,5 +1,9 @@
-.itemList{
+.itemListContainer{
     text-align : center;
     color : black;
-    margin-top: 5%;
+    margin: 5%;
+    display: grid;
+    flex-wrap: wrap;
+    height: 90%;
+    width: 90%;
 }

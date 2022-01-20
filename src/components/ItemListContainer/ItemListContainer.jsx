@@ -1,11 +1,32 @@
+import React, {useEffect, useState} from "react"
 import "./ItemListContainer.css"
-import ItemCount from "../ItemCount/ItemCount"
+import Loading from "../Loading/Loading"
+import ItemList from "../ItemList/ItemList"
+import data from './../../data/products.json'
 
 export default function ItemListContainer ({greeting}) {
+
+    const traerProductos = async () =>{
+        
+        setTimeout(()=>{
+            setProductos(data)
+        },2000)
+    }
+
+    const [productos, setProductos] = useState([])
+
+    useEffect( ()=> {
+        traerProductos()
+    }, [])
+
     return(
-        <>
-            <h5 className="itemList" >{greeting}</h5>
-            <ItemCount initial={1} stock={5} />
-        </>
+        <div>
+            {
+                (productos.length > 0) ? 
+                    <ItemList products={productos} />
+                :
+                    <Loading />
+            }
+        </div>
     )
 }
