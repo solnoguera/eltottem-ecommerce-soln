@@ -23,7 +23,10 @@ export default function ItemListContainer ({greeting}) {
         <div>
             {
                 (productos.length > 0) ? 
-                    <ItemList products={productos} />
+                    <>
+                        <h3 className='greeting'>{greeting}</h3>
+                        <ItemList products={productos} />
+                    </>
                 :
                     <Loading />
             }
