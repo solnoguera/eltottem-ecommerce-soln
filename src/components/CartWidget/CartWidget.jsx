@@ -1,10 +1,11 @@
 import carrito from "../../assets/carrito.png"
+import './CartWidget.css'
 
 export default function CartWidget(){
     return (
-        <>
-            <img src={carrito} alt="carrito" width="6%" height="6%" style={{ marginRight:15 }} />
-            <b style={{ color:"black" }}>0</b>
-        </>
+        <div className='cart'>
+            <img src={carrito} alt="carrito" width="35px" height="35px" />
+            <span style={{fontSize : '20px'}}>0</span>
+        </div>
     )
 }

@@ -22,10 +22,13 @@ export default function NavBar() {
   return (
     <Navbar variant="light" expand="lg" className='fondoRojo' >
       <Container>
-      <img src={logo} alt="logo" width="12%" height="10%" style={{ marginRight:25 }} />
-        <Navbar.Brand className='letra'> Tienda El Tottem</Navbar.Brand>
+      <img src={logo} alt="logo"  width="140px" height="75px" style={{ marginRight:"25px" }} />
+        <Navbar.Brand className='titulo'> Tienda El Tottem</Navbar.Brand>
+
+        <CartWidget/>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" style={{marginLeft : '15%'}}>
           <Nav className="me-auto letra" navbarScroll>
             <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/nosotros">Nosotros</Nav.Link>
@@ -36,7 +39,7 @@ export default function NavBar() {
           </Nav>
         </Navbar.Collapse>
 
-        <CartWidget />
+        
         
       </Container>
     </Navbar>

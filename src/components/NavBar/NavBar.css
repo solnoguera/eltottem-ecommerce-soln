@@ -2,6 +2,8 @@
     background-color: #fc5a55;
   }
 
-.letra{
+.titulo{
   font-size: 20px !important;
+  margin-right: 25px;
+  margin-left: 25px;
 }
