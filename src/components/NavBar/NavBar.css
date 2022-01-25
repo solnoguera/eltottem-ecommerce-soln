@@ -3,7 +3,11 @@
   }
 
 .titulo{
-  font-size: 20px !important;
+  font-size: 20px;
   margin-right: 25px;
   margin-left: 25px;
+}
+
+.letra{
+  font-size: 20px;
 }

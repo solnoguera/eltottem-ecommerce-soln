@@ -22,13 +22,13 @@ export default function NavBar() {
   return (
     <Navbar variant="light" expand="lg" className='fondoRojo' >
       <Container>
-      <img src={logo} alt="logo"  width="140px" height="75px" style={{ marginRight:"25px" }} />
+      <img src={logo} alt="logo"  width="120px" height="65px" />
         <Navbar.Brand className='titulo'> Tienda El Tottem</Navbar.Brand>
 
         <CartWidget/>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" style={{marginLeft : '15%'}}>
+        <Navbar.Collapse id="basic-navbar-nav" style={{marginLeft : '20%'}}>
           <Nav className="me-auto letra" navbarScroll>
             <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/nosotros">Nosotros</Nav.Link>

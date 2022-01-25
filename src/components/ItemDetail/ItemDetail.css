@@ -5,13 +5,15 @@
 }
 .row{
     background-color: white;
-    margin: 3%;
+    margin: 4% 3%;
 }
 .col-details{
-    padding-left: 45px;
+    padding-left: 40px;
+    padding-bottom: 40px;
 }
 
 .margin{
-    margin: 40px;
+    margin: 35px;
+    padding: 5px;
 }
 
