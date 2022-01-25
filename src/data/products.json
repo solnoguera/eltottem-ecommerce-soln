@@ -1,38 +1,62 @@
 [
     {
+        "id" : "000",
         "title" : "Pizza Muzzarella",
         "price" : "750",
+        "category" : "pizzas",
         "description" : "",
-        "image" : "/img/muzza.jpeg"
+        "image" : "/img/muzza.jpeg",
+        "initial" : 1,
+        "stock" : 25
     },
     {
+        "id" : "001",
         "title" : "Pizza Napolitana",
         "price" : "850",
+        "category" : "pizzas",
         "description" : "",
-        "image" : "/img/napo.jpeg"
+        "image" : "/img/napo.jpeg",
+        "initial" : 1,
+        "stock" : 25
     },
     {
+        "id" : "002",
         "title" : "Pizza Jamón y Morrones",
         "price" : "800",
+        "category" : "pizzas",
         "description" : "",
-        "image" : "/img/morrones.jpeg"
+        "image" : "/img/morrones.jpeg",
+        "initial" : 1,
+        "stock" : 25
     },
     {
+        "id" : "003",
         "title" : "Docena de Empanadas",
         "price" : "1500",
+        "category" : "empanadas",
         "description" : "",
-        "image" : "/img/empa.jpg"
+        "image" : "/img/empa.jpg",
+        "initial" : 1,
+        "stock" : 25
     },
     {
+        "id" : "004",
         "title" : "Sandwich de lomito",
         "price" : "600",
+        "category" : "sandwiches",
         "description" : "",
-        "image" : "https://www.radiorafaela.com.ar/wp-content/uploads/2018/02/lomito.jpg"
+        "image" : "https://www.radiorafaela.com.ar/wp-content/uploads/2018/02/lomito.jpg",
+        "initial" : 1,
+        "stock" : 25
     },
     {
+        "id" : "005",
         "title" : "Sandwich de milanesa",
         "price" : "600",
+        "category" : "sandwiches",
         "description" : "",
-        "image" : "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/145/094/products/celi-gourmet-1-img_31051-8144586f999f47e9eb15861474046296-1024-1024.jpg"
+        "image" : "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/145/094/products/celi-gourmet-1-img_31051-8144586f999f47e9eb15861474046296-1024-1024.jpg",
+        "initial" : 1,
+        "stock" : 25
     }
 ]

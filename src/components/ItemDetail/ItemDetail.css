@@ -1,0 +1,17 @@
+.col-imagen{
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.row{
+    background-color: white;
+    margin: 3%;
+}
+.col-details{
+    padding-left: 45px;
+}
+
+.margin{
+    margin: 40px;
+}
+
