@@ -1,4 +1,7 @@
-.hamburguesa{
-    height: 15%;
-    width: 15%;
+.categoria{
+    color: black;
+}
+
+.categoria:hover{
+    color: red
 }

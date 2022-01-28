@@ -1,21 +1,29 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom';
+import iconDefault from '../../assets/defaultIMG.png'
 import './Item.css'
 
 export default function Item({ item }) {
 
-    const { title, price, description, image } = item
+    const { id, title, price, description, image} = item
 
     return (
-        <Card className='card'>
-            <Card.Img variant="top" src={image}/>
+        <Card className='producto'>
+            <Card.Img variant="top" src={image || iconDefault}/>
             <Card.Body>
                 <Card.Title className='padding'>{title}</Card.Title>
-                <Card.Text className='padding'>
-                    {price}
-                    {description}
+                <Card.Text className='padding'> 
+                    <div className='description'>
+                        {description}
+                    </div>
+                    ${price}
                 </Card.Text>
-                <Button variant="danger">Pedinos!</Button>
+                <Button variant="danger" className='boton'>
+                    <NavLink to={`/item/${id}`} className='normalizeWhiteLink'> 
+                        Pedinos!
+                    </NavLink>
+                </Button>
             </Card.Body>
         </Card>
     

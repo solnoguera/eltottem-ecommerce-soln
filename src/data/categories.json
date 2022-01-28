@@ -1,0 +1,10 @@
+[
+    { "name" : "Promociones", "link" : "/promociones"},
+    { "name" : "Pizzas", "link" : "/pizzas"},
+    { "name" : "Empanadas", "link" : "/empanadas"},
+    { "name" : "Tartas", "link" : "/tartas"},
+    { "name" : "Sandwiches", "link" : "/sandwiches"},
+    { "name" : "Hamburguesas", "link" : "/hamburguesas"},
+    { "name" : "Minutas", "link" : "/minutas"},
+    { "name" : "Bebidas", "link" : "/bebidas"}
+  ]

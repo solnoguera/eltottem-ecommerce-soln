@@ -22,7 +22,8 @@
     height: 150px;
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     background-color: white;
-    box-shadow: none;
+    box-shadow: none !important;
     border:none;
 }

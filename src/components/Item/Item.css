@@ -1,18 +1,24 @@
-
-
 .padding{
-  padding: 10px;
+  margin: 12px;
 }
-.card {
 
+.boton{
+  margin-left: 12px;
+}
+
+.description{
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.producto{
   height: auto !important;
   width: '18rem' !important;
   color : black;
   overflow: hidden;
-  box-shadow: 0 2px 20px gray;
+  box-shadow: 0 2px 20px gray !important;
   border-radius: 10px;
   display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
   cursor: pointer;
   transition: transform 200ms ease-in;
