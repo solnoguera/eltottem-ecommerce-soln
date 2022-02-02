@@ -1,7 +1,7 @@
-import React from 'react';
-import swall from "sweetalert"
+import React, { useState } from 'react';
 import { Col, Row, Image, Container } from 'react-bootstrap';
 import ItemCount from './../ItemCount/ItemCount'
+import GoToCart from '../GoToCart/GoToCart';
 import iconDefault from '../../assets/defaultIMG.png'
 import './ItemDetail.css'
 
@@ -9,9 +9,10 @@ export default function ItemDetail({ item }) {
 
     const { title, price, description, image, initial, stock } = item
 
+    const [cantidad, setCantidad] = useState(undefined)
+
     function onAdd(counter){
-        swall(`Se han agregado correctamente 
-            ${counter} items al carrito`)
+        setCantidad(counter)
     }
 
     return (
@@ -33,8 +34,14 @@ export default function ItemDetail({ item }) {
                         <></>
                     }
                     
+                    {
+                        (!cantidad)?
+                        <ItemCount className='margin' initial={initial} stock={stock} onAdd={onAdd}/>
+                        :
+                        <GoToCart cantidad={cantidad}/>
+                    }
                     
-                    <ItemCount className='margin' initial={initial} stock={stock} onAdd={onAdd}/>
+                    
                 </Col>
 
             </Row>

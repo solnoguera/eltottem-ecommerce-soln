@@ -1,0 +1,15 @@
+.go-to-cart{
+    width: 150px;
+    margin-left: 35px;
+}
+
+.keep-buying{
+    color:black;
+    font-size: medium;
+    margin-left: 35px;
+    margin-top: 25px;
+}
+
+.keep-buying:hover{
+    color:red;
+}
