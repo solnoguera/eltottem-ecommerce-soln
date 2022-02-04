@@ -7,13 +7,13 @@
     width: 100px; 
 }
 .ancho-counter{
-    margin:10px;
+    margin:16px;
     width: 180px;
 }
 
 .add-to-cart{
     display : flex;
-    margin: 10px;
+    margin: 14px;
     width: 180px;
 }
 

@@ -14,9 +14,9 @@ export default function Item({ item }) {
             <Card.Body>
                 <Card.Title className='padding'>{title}</Card.Title>
                 <Card.Text className='padding'> 
-                    <div className='description'>
+                    <p className='description'>
                         {description}
-                    </div>
+                    </p>
                     ${price}
                 </Card.Text>
                 <Button variant="danger" className='boton'>

@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Col, Row, Image, Container } from 'react-bootstrap';
 import ItemCount from './../ItemCount/ItemCount'
 import GoToCart from '../GoToCart/GoToCart';
 import iconDefault from '../../assets/defaultIMG.png'
 import './ItemDetail.css'
+import { context } from '../../context/CartProvider';
 
 export default function ItemDetail({ item }) {
 
+    const {addToCart} = useContext(context)
+
     const { title, price, description, image, initial, stock } = item
 
-    const [cantidad, setCantidad] = useState(undefined)
+    const [added, setAdded] = useState(undefined)
 
     function onAdd(counter){
-        setCantidad(counter)
+        console.log(`Agregaste ${item.title}, cantidad: ${counter}.`);
+        addToCart(item, counter)
+        setAdded(counter)
     }
 
     return (
@@ -35,10 +40,10 @@ export default function ItemDetail({ item }) {
                     }
                     
                     {
-                        (!cantidad)?
+                        (!added)?
                         <ItemCount className='margin' initial={initial} stock={stock} onAdd={onAdd}/>
                         :
-                        <GoToCart cantidad={cantidad}/>
+                        <GoToCart cantidad={added}/>
                     }
                     
                     

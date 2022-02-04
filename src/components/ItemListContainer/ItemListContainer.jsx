@@ -13,7 +13,7 @@ export default function ItemListContainer ({greeting}) {
     useEffect( ()=> {
         
         const products = new Promise( resolve => {
-            setTimeout(() => resolve(data), 2000)
+            setTimeout(() => resolve(data), 1000)
         })
         .then(res => {
             const misProductos = (categoryName) ?  

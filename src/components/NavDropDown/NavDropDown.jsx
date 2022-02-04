@@ -6,7 +6,7 @@ export default function NavDropDown ({title, categories}){
     return (
         <NavDropdown title={title} id="basic-nav-dropdown" className='normalizeBlackLink'>
             {
-                categories.map( category =>
+                categories.map( (category, index) =>
                     <>
                         {/**
                          * Excepcion href *
@@ -16,7 +16,7 @@ export default function NavDropDown ({title, categories}){
                          * el nombre de esta, lo que puede parecer que no esta redirigiendo 
                          * correctamente al tocar DENTRO del boton pero fuera del nombre.
                          */}
-                        <NavDropdown.Item href={'/category'+category.link}>
+                        <NavDropdown.Item href={'/category'+category.link} key={index}>
 
                             <NavLink to={'/category'+category.link} className='categoria'>
                                 {category.name}
