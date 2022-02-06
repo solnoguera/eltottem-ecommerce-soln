@@ -24,7 +24,7 @@ export default function Cart() {
               cart.map(item => <CartItem product={item.product} quantity={item.quantity} key={item.product.id}/>)
             }
             
-            <Button variant='danger' onClick={()=>cleanCart()} style={{margin:'2% 5%'}}>
+            <Button variant='danger' onClick={()=>cleanCart()} style={{margin:'3% 5%'}}>
               Vaciar Carrito
             </Button>
             <h3 style={{margin:'2% 5%'}}>Total: ${totalPrice()}</h3>
