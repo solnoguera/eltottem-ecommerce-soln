@@ -13,7 +13,7 @@ export default function CartWidget(){
         <div className='cart'>
             <NavLink to={'/cart'} className='normalizeBlackLink'> 
                 <img src={carrito} alt="carrito" width="35px" height="35px" />
-                <span className='number'>{total}</span>
+                <span className='number'>{total !== 0 ? total : ''}</span>
             </NavLink>
         </div>
     )

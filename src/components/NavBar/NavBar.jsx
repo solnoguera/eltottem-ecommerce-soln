@@ -16,17 +16,17 @@ export default function NavBar() {
       <Container>
 
           <NavLink to={'/'} className='normalizeBlackLink'> 
-            <img src={logo} alt="logo"  width="120px" height="65px" />
+            <img src={logo} alt="logo"  width="110px" height="60px" />
           </NavLink>
           
           <NavLink to={'/'} className='normalizeBlackLink'> 
-            <Navbar.Brand className='titulo'> Tienda El Tottem</Navbar.Brand>
+            <Navbar.Brand className='titulo'> Tienda Online</Navbar.Brand>
           </NavLink>
         
         <CartWidget/>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" style={{marginLeft : '16%'}}>
+        <Navbar.Collapse id="basic-navbar-nav" style={{marginLeft : '20%'}} >
           <Nav className="me-auto letra" navbarScroll>
 
             <Nav.Link>

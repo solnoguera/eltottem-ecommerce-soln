@@ -3,14 +3,14 @@ import {Button, ButtonGroup} from 'react-bootstrap'
 import { context } from '../../context/CartProvider';
 import './CartItem.css'
 
-export default function CartItem({product, quantity}) {
+export default function CartItem({product, price, quantity}) {
   
     const {deleteFromCart, oneItemMore, oneItemLess} = useContext(context)
 
   return (
     <div className='item'>
         <h4>{product.title}</h4>
-        <p>Cantidad: {quantity}</p>
+        <p>${price} - Cantidad: {quantity}</p>
         <ButtonGroup>
           <Button variant='danger' onClick={()=>oneItemLess(product.id)}> - </Button>
           <Button variant='danger' onClick={()=>oneItemMore(product.id)}> + </Button>
