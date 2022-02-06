@@ -1,8 +1,10 @@
 .item{
     background-color: white;
     padding: 30px;
-    width: 100%;
+    width: 90%;
     height: auto;
-    margin: 2%;
-    text-align: center;
+    margin: 2% 30% 2% 5%;
+    text-align: left;
+    display: flex;
+    align-items: center;
 }

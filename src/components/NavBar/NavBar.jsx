@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar, Container } from "react-bootstrap";
+import { Nav, Navbar, Container, Form } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
 import NavDropDown from "../NavDropDown/NavDropDown"
 import CartWidget from "../CartWidget/CartWidget";
@@ -18,15 +18,15 @@ export default function NavBar() {
           <NavLink to={'/'} className='normalizeBlackLink'> 
             <img src={logo} alt="logo"  width="110px" height="60px" />
           </NavLink>
-          
+
           <NavLink to={'/'} className='normalizeBlackLink'> 
-            <Navbar.Brand className='titulo'> Tienda Online</Navbar.Brand>
+            <Navbar.Brand className='titulo'>Tienda</Navbar.Brand>
           </NavLink>
-        
+
         <CartWidget/>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" style={{marginLeft : '20%'}} >
+        <Navbar.Collapse id="basic-navbar-nav" style={{marginLeft:'35%'}}>
           <Nav className="me-auto letra" navbarScroll>
 
             <Nav.Link>
@@ -42,12 +42,6 @@ export default function NavBar() {
             </Nav.Link>
             
             <NavDropDown title='Productos' categories={categories} />
-
-            <Nav.Link>
-              <NavLink to={'/contact'} className='normalizeBlackLink'> 
-                Contacto
-              </NavLink>
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
 

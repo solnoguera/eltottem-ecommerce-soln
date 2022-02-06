@@ -19,15 +19,15 @@ export default function Cart() {
           </div>
           :
           <>
-            <h2 style={{margin:'2%'}}>Tu Carrito</h2> 
+            <h2 style={{textAlign:'center', margin:'3%'}}>Tu Carrito</h2> 
             {
-              cart.map(item => <CartItem product={item.product} price={item.product.price} quantity={item.quantity} key={item.product.id}/>)
+              cart.map(item => <CartItem product={item.product} quantity={item.quantity} key={item.product.id}/>)
             }
             
-            <Button variant='danger' onClick={()=>cleanCart()} style={{margin:'2%'}}>
+            <Button variant='danger' onClick={()=>cleanCart()} style={{margin:'2% 5%'}}>
               Vaciar Carrito
             </Button>
-            <h3 style={{margin:'2%'}}>Total: ${totalPrice()}</h3>
+            <h3 style={{margin:'2% 5%'}}>Total: ${totalPrice()}</h3>
           </>
       }
       
