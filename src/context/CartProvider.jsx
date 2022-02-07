@@ -5,7 +5,6 @@ export const context = createContext()
 export default function CartProvider ({children}){
   
     const [cart, setCart] = useState([])
-    const [total, setTotal] = useState(0)
   
     const addToCart = (product, quantity) => {
         
@@ -16,7 +15,6 @@ export default function CartProvider ({children}){
         } else {
             setCart( [...cart, {product, quantity} ] )
         }
-        setTotal(total + quantity)
     }
 
     const isInCart = (id) => {
@@ -24,19 +22,20 @@ export default function CartProvider ({children}){
     }
 
     const deleteFromCart = (id) => {
-        const quantityDeleted = cart.find(el=> el.product.id===id).quantity
         const newCart = cart.filter(element => element.product.id !== id)
         setCart(newCart) 
-        setTotal(total - quantityDeleted)
     }
 
     const cleanCart = () => {
         setCart([])
-        setTotal(0)
     }
 
     const totalPrice = () => {
         return cart.reduce( (acumulador, item) => acumulador + (item.product.price * item.quantity),0 )
+    }
+
+    const totalItems = () => {
+        return cart.reduce( (acumulador, item) => acumulador +  item.quantity ,0 )
     }
 
     const oneItemMore = (id) => {
@@ -45,7 +44,6 @@ export default function CartProvider ({children}){
         if(item.quantity < item.product.stock){
             cart[indexItem].quantity = item.quantity + 1
             setCart([...cart])
-            setTotal(total+1)
         }
         
     }
@@ -56,13 +54,12 @@ export default function CartProvider ({children}){
         if(item.quantity > 1){
             cart[indexItem].quantity = item.quantity - 1
             setCart([...cart])
-            setTotal(total-1)
         }
     }
   
     return (
         <context.Provider 
-            value={{cart, addToCart, deleteFromCart, cleanCart, oneItemMore, oneItemLess, total, totalPrice}}>
+            value={{cart, addToCart, deleteFromCart, cleanCart, oneItemMore, oneItemLess, totalPrice, totalItems}}>
             {children}
         </context.Provider>
     );
