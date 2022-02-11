@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getFirestore } from "../firebase/Firebase";
 
-export const useFirestoreItem = (nameCollection, itemId) => {
+export default function useFirestoreItem (nameCollection, itemId) {
 
     const [item, setItem] = useState(null);
     const [loading, setLoading] = useState(true);

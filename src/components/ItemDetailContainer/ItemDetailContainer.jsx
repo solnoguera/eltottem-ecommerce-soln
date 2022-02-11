@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import Loading from '../Loading/Loading';
-import { useFirestoreItem } from '../../hooks/useFirestoreItem';
+import useFirestoreItem from '../../hooks/useFirestoreItem';
 
 export default function ItemDetailContainer() {
 
@@ -14,17 +14,12 @@ export default function ItemDetailContainer() {
         <div>
             {
                 (error) ?
-                
                 <ErrorMessage error={error} />
-
                 :
-
                 (loading) ?
-                
-                    <Loading />
-                    :
-                    <ItemDetail item={item}/>
-                    
+                 <Loading />
+                :
+                <ItemDetail item={item}/>
             }
             
         </div>

@@ -5,3 +5,10 @@
     justify-content: space-evenly;
     margin: 30px;
 }
+.greeting{
+    color: black;
+    margin: 30px;
+    text-align: center;
+    text-shadow: 2px;
+    font-size: 20px;
+}

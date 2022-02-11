@@ -3,8 +3,7 @@ import { useParams } from "react-router"
 import Loading from "../Loading/Loading"
 import ItemList from "../ItemList/ItemList"
 import ErrorMessage from "../ErrorMessage/ErrorMessage"
-import "./ItemListContainer.css"
-import { useFirestoreCollection } from "../../hooks/useFirestoreCollection"
+import useFirestoreCollection from "../../hooks/useFirestoreCollection"
 
 
 export default function ItemListContainer ({greeting}) {
@@ -16,19 +15,13 @@ export default function ItemListContainer ({greeting}) {
         <div>
             {
                 (error) ?
-
                 <ErrorMessage error={error}/>
-
                 :
-
                 (loading) ? 
-                    <Loading />
-                    :
-                    <>
-                        <p className='greeting'>{greeting}</p>
-                        <ItemList products={collection} />
-                    </>
-                    
+                <Loading />
+                :
+                <ItemList greeting={greeting} products={collection} />
+                
             }
         </div>
     )
