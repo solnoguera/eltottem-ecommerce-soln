@@ -5,6 +5,7 @@ export const useFirestoreItem = (nameCollection, itemId) => {
 
     const [item, setItem] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         setLoading(true);
@@ -13,17 +14,16 @@ export const useFirestoreItem = (nameCollection, itemId) => {
             .then((doc) => {
 
                 if (!doc.exists) {
-                    console.log('No existe ese documento');
+                    setError('No existe el documento');
                 return
                 }
-                console.log('Item encontrado!');
                 setItem({ id: doc.id, ...doc.data() });
 
             })
-            .catch(dataError => console.log(dataError))
+            .catch(dataError => setError('Error al buscar los productos: ' + dataError))
             .finally(()=> setLoading(false))
 
     }, [nameCollection, itemId])
 
-    return { item, loading }
+    return { item, loading, error }
 }

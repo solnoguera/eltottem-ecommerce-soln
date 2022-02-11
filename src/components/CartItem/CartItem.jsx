@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import {Button, ButtonGroup} from 'react-bootstrap'
 import { context } from '../../context/CartProvider';
+import iconDefault from '../../assets/defaultIMG.png'
 import './CartItem.css'
 
 export default function CartItem({product, quantity}) {
@@ -9,7 +10,7 @@ export default function CartItem({product, quantity}) {
 
   return (
     <div className='item'>
-        <img src={product.image} alt="producto" width="30%" height="15%"/>
+        <img src={product.image || iconDefault} alt="producto" width="30%" height="15%"/>
 
         <div style={{marginLeft:'40px'}}>
           <h4>{product.title}</h4>

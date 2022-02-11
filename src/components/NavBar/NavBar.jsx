@@ -18,7 +18,7 @@ export default function NavBar() {
       <Container>
 
           <NavLink to={'/'} className='normalizeBlackLink'> 
-            <img src={logo} alt="logo"  width="105px" height="55px" />
+            <img src={logo} alt="logo"  width="115px" height="60px" />
           </NavLink>
 
           <NavLink to={'/'} className='normalizeBlackLink'> 
