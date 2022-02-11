@@ -1,18 +1,8 @@
-.fondoRojo {
-    background-color: #f34c4c;
+.nav {
+  background-color: #f34c4c;
 }
 .titulo{
-  font-size: 20px;
-  margin-right: 25px;
-  margin-left: 25px;
-}
-
-.letra{
-  font-size: 20px;
-}
-
-.searchInput{
-  margin-top: 12px;
-  margin-left: 20px;
-  width: 20%;
+  margin: 0px 20px;
+  font-size: 17px;
+  font-weight: 600;
 }

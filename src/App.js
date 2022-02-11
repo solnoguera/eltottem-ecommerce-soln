@@ -16,10 +16,10 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path='/'>
-              <ItemListContainer greeting="Disfrutá de la calidad de nuestros productos!" />
+              <ItemListContainer greeting="Bienvenido a El Tottem!" />
             </Route>
             <Route path='/category/:categoryName'>
-              <ItemListContainer greeting="Disfrutá de la calidad de nuestros productos!" />
+              <ItemListContainer greeting="Bienvenido a El Tottem!" />
             </Route>
             <Route path='/item/:itemId'>
               <ItemDetailContainer />

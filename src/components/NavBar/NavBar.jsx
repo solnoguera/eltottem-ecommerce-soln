@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar, Container, Form } from "react-bootstrap";
+import { Nav, Navbar, Container } from "react-bootstrap";
 import { NavLink } from 'react-router-dom';
 import NavDropDown from "../NavDropDown/NavDropDown"
 import CartWidget from "../CartWidget/CartWidget";
@@ -9,14 +9,16 @@ import './NavBar.css'
 
 
 
+
 export default function NavBar() {
 
   return (
-    <Navbar variant="light" expand="lg" className='fondoRojo'>
+    <Navbar variant="light" expand="lg" className='nav'>
+      
       <Container>
 
           <NavLink to={'/'} className='normalizeBlackLink'> 
-            <img src={logo} alt="logo"  width="110px" height="60px" />
+            <img src={logo} alt="logo"  width="105px" height="55px" />
           </NavLink>
 
           <NavLink to={'/'} className='normalizeBlackLink'> 
@@ -26,7 +28,7 @@ export default function NavBar() {
         <CartWidget/>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" style={{marginLeft:'35%'}}>
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto letra" navbarScroll>
 
             <Nav.Link>
@@ -44,8 +46,6 @@ export default function NavBar() {
             <NavDropDown title='Productos' categories={categories} />
           </Nav>
         </Navbar.Collapse>
-
-        
         
       </Container>
     </Navbar>

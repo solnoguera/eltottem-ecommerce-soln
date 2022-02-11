@@ -3,46 +3,19 @@ import { useParams } from 'react-router';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Loading from '../Loading/Loading';
 import { getFirestore } from '../../firebase/Firebase';
+import { useFirestoreItem } from '../../hooks/useFirestoreItem';
 
 export default function ItemDetailContainer() {
 
     const {itemId} = useParams()
-
-    const [product, setProduct] = useState([])
-
-    useEffect( ()=> {
-        traerProducto()
-    }, [itemId])
-
-    const traerProducto = async () =>{
-        
-        const db = getFirestore()
-        const productsCollection = db.collection('products')
-        const item = productsCollection.doc(itemId)
-
-        item.get()    
-            .then((doc) => {
-
-                if (!doc.exists) {
-                    console.log('No existe ese documento');
-                return
-                }
-
-                console.log('Item encontrado!');
-                setProduct({ id: doc.id, ...doc.data() });
-
-            })
-            .catch((err)=>{
-                console.log(err);
-            })
-    }
+    const {item, loading} = useFirestoreItem("items", itemId);
 
     return (
         <div>
             {
-                (product.id) ?
+                (!loading) ?
                 
-                <ItemDetail item={product}/>
+                <ItemDetail item={item}/>
                 :
                 <Loading />
             }
