@@ -9,24 +9,23 @@ export default function Item({ item }) {
     const { id, title, price, description, image} = item
 
     return (
-        <Card className='producto'>
-            <Card.Img variant="top" src={image || iconDefault}/>
-            <Card.Body>
-                <Card.Title className='padding'>{title}</Card.Title>
-                <Card.Text className='padding'> 
-                    <p className='description'>
-                        {description}
-                    </p>
-                    ${price}
-                </Card.Text>
-                <Button variant="danger" className='boton'>
-                    <NavLink to={`/item/${id}`} className='normalizeWhiteLink'> 
-                        Pedinos!
-                    </NavLink>
-                </Button>
-            </Card.Body>
-        </Card>
-    
+        <NavLink to={`/item/${id}`} className='normalizeItem'> 
+            <Card className='producto'>
+                <Card.Img variant="top" src={image || iconDefault}/>
+                <Card.Body>
+                    <Card.Title className='padding'>{title}</Card.Title>
+                    <Card.Text className='padding'> 
+                        <p className='description'>
+                            {description}
+                        </p>
+                        ${price}
+                    </Card.Text>
+                    <Button variant="danger" className='boton'>
+                            Pedinos!
+                    </Button>
+                </Card.Body>
+            </Card>
+        </NavLink>
     );
 };
 

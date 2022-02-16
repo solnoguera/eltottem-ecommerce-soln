@@ -1,0 +1,22 @@
+.containerCheckOut{
+    margin: 3%;
+    text-align: center;
+}
+.containerCheckOut > input {
+    margin: 5px;
+    height: 35px;
+    width: 300px;
+}
+input{
+    border-radius: 5px;
+    border: black solid 1px
+}
+.margin{
+    margin: 2%;
+}
+.border{
+    border-radius: 5px;
+    width: 100px;
+    border: 1px black solid !important;
+    margin-bottom: 3%;
+}

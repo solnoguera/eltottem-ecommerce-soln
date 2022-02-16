@@ -1,7 +1,7 @@
 import React from 'react';
 import './ErrorMessage.css'
 
-const ErrorMessage = ({error}) => {
+export default function ErrorMessage ({error}) {
   return (
     <div className='error'>
         <h2>Lo sentimos, ha ocurrido un error :( </h2>
@@ -10,4 +10,3 @@ const ErrorMessage = ({error}) => {
   );
 };
 
-export default ErrorMessage;

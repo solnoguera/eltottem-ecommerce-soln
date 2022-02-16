@@ -3,13 +3,14 @@ import { context } from '../../context/CartProvider';
 import CartItem from '../CartItem/CartItem';
 import {Button} from 'react-bootstrap'
 import { NavLink } from 'react-router-dom';
+import './Cart.css'
 
 export default function Cart() {
   
   const {cart, cleanCart, totalPrice} = useContext(context)
 
   return (
-    <div style={{margin:'3%', textAlign:'center'}}>
+    <div className='containerCart'>
       {
         (cart.length === 0) ?
           <div >
@@ -23,10 +24,16 @@ export default function Cart() {
             {
               cart.map(item => <CartItem product={item.product} quantity={item.quantity} key={item.product.id}/>)
             }
-            
-            <Button variant='danger' onClick={()=>cleanCart()} style={{margin:'3% 0%'}}>
+             <NavLink to={'/checkout'}>
+              <Button variant='danger' className='boton'>
+                Continuar
+              </Button>
+            </NavLink>
+
+            <Button variant='light' onClick={()=>cleanCart()} className='boton'>
               Vaciar Carrito
             </Button>
+
             <h3>Total: ${totalPrice()}</h3>
           </>
       }
