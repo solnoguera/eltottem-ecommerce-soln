@@ -8,7 +8,6 @@ export default function CartWidget(){
 
     const {totalItems} = useContext(context)
     
-
     return (
         <div className='cart'>
             <NavLink to={'/cart'} className='normalizeBlackLink'> 

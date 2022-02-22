@@ -3,6 +3,6 @@
     margin: 100px;
 }
 
-.red{
+.error > p {
     color: 'red';
 }

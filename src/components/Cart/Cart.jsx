@@ -14,7 +14,7 @@ export default function Cart() {
       {
         (cart.length === 0) ?
           <div >
-            <h2>Ups! Parece que tu carrito esta vacío</h2>
+            <h2>Parece que tu carrito esta vacío.</h2>
             <br/>
             <NavLink to={'/'} style={{color:'black'}}>Ir a comprar</NavLink>
           </div>

@@ -1,5 +1,6 @@
 .item{
     background-color: white;
+    border-radius: 8px;
     padding: 30px;
     width: 90%;
     height: auto;

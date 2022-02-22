@@ -11,6 +11,12 @@ input{
     border-radius: 5px;
     border: black solid 1px
 }
+#sendOrder{
+    margin: 2%;
+}
+#sendOrder > p {
+    color:red;
+}
 .margin{
     margin: 2%;
 }

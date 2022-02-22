@@ -1,0 +1,26 @@
+.presentation{
+    text-align: left;
+    margin: 5%;
+}
+.presentation > *{
+    margin: 20px 0px;
+}
+.presentation > h2, h5{
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.col-imagen{
+    margin: 35px 0px;
+}
+.col-imagen > p{
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+}
+.days{
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.margin-horarios{
+    margin: 40px 0px 30px 0px;
+}

@@ -12,7 +12,7 @@ export default function ItemDetail({ item }) {
 
     const { title, price, description, image, initial, stock } = item
 
-    const [added, setAdded] = useState(undefined)
+    const [added, setAdded] = useState(null)
 
     function onAdd(counter){
         console.log(`Agregaste ${item.title}, cantidad: ${counter}.`);
@@ -21,7 +21,7 @@ export default function ItemDetail({ item }) {
     }
 
     return (
-        <Container fluid style={{display:'grid'}}>
+        <Container fluid >
 
             <Row className='row'>
 
@@ -30,18 +30,18 @@ export default function ItemDetail({ item }) {
                 </Col>
 
                 <Col className='col-details'>
-                    <h2 className='margin'>{title}</h2>
-                    <h3 className='margin'>${price}</h3>
+                    <h2>{title}</h2>
+                    <h3>${price}</h3>
                     {
                         (description)?
-                        <p className='margin'>{description}</p>
+                        <p>{description}</p>
                         :
                         <></>
                     }
                     
                     {
                         (!added)?
-                        <ItemCount className='margin' initial={initial} stock={stock} onAdd={onAdd}/>
+                        <ItemCount initial={initial} stock={stock} onAdd={onAdd}/>
                         :
                         <GoToCart cantidad={added}/>
                     }

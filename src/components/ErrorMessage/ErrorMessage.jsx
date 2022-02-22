@@ -5,7 +5,7 @@ export default function ErrorMessage ({error}) {
   return (
     <div className='error'>
         <h2>Lo sentimos, ha ocurrido un error :( </h2>
-        <p className='red'>{error}</p>
+        <p>{error}</p>
     </div>
   );
 };

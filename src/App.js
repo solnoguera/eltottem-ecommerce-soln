@@ -7,6 +7,9 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart'
 import CartProvider from './context/CartProvider';
 import CheckOut from './components/CheckOut/CheckOut'
+import Slider from './components/Slider/Slider';
+import About from './components/About/About';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -16,7 +19,9 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path='/'>
-              <ItemListContainer greeting="Bienvenido a El Tottem!" />
+              <Slider />
+              <ItemListContainer greeting="Disfrutá de la calidad de nuestros productos!" />
+              <Footer />
             </Route>
             <Route path='/category/:categoryName'>
               <ItemListContainer greeting="Bienvenido a El Tottem!" />
@@ -29,6 +34,9 @@ function App() {
             </Route>
             <Route exact path='/checkout'>
               <CheckOut />
+            </Route>
+            <Route exact path='/about'>
+              <About />
             </Route>
           </Switch>
         </BrowserRouter>

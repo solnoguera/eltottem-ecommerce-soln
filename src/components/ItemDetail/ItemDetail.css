@@ -1,19 +1,18 @@
-.col-imagen{
-    margin: auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
 .row{
     background-color: white;
-    margin: 4% 3%;
+    border-radius: 8px;
+    margin: 3%;
+}
+.col-imagen{
+    margin: 25px 10px;
 }
 .col-details{
+    margin: 25px 0px;
     padding-left: 30px;
     padding-bottom: 40px;
 }
 
-.margin{
-    margin: 35px;
+.col-details > * {
     padding: 5px;
 }
 

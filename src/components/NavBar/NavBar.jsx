@@ -24,7 +24,7 @@ export default function NavBar() {
         <Navbar variant="light" expand="lg" className="nav">
           <Container>
             <NavLink to={"/"} className="normalizeBlackLink">
-              <img src={logo} alt="logo" width="115px" height="60px" />
+              <img src={logo} alt="logo" width="115px" height="65px" />
             </NavLink>
 
             <NavLink to={"/"} className="normalizeBlackLink">
@@ -49,6 +49,7 @@ export default function NavBar() {
                 </Nav.Link>
 
                 <NavDropDown title="Productos" categories={collection} />
+                
               </Nav>
             </Navbar.Collapse>
           </Container>

@@ -6,22 +6,23 @@ import './Item.css'
 
 export default function Item({ item }) {
 
-    const { id, title, price, description, image} = item
+    const { id, title, price, description, image, stock} = item
+    const link = (stock === 0) ? '/' : `/item/${id}`
 
     return (
-        <NavLink to={`/item/${id}`} className='normalizeItem'> 
+        <NavLink to={link} className='normalizeItem'> 
             <Card className='producto'>
                 <Card.Img variant="top" src={image || iconDefault}/>
-                <Card.Body>
-                    <Card.Title className='padding'>{title}</Card.Title>
-                    <Card.Text className='padding'> 
+                <Card.Body className='cardContent'>
+                    <Card.Title>{title}</Card.Title>
+                    <Card.Text> 
                         <p className='description'>
                             {description}
                         </p>
                         ${price}
                     </Card.Text>
-                    <Button variant="danger" className='boton'>
-                            Pedinos!
+                    <Button variant="danger" className='botonPedir'>
+                        {stock === 0 ? 'Sin Stock' : 'Pedinos!'}
                     </Button>
                 </Card.Body>
             </Card>
