@@ -2,7 +2,7 @@ import {NavDropdown} from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import './NavDropDown.css'
 
-export default function NavDropDown ({title, categories}){
+export default function NavDropDown ({title, categories = []}){
     return (
         <NavDropdown title={title} id="basic-nav-dropdown" className='normalizeBlackLink'>
             {
@@ -24,8 +24,12 @@ export default function NavDropDown ({title, categories}){
                             </NavLink>
 
                         </NavDropdown.Item>
+                        { index !== categories.length -1 ?
+                            <NavDropdown.Divider />
+                            :
+                            <></>
+                        }
                         
-                        <NavDropdown.Divider />
                         
                     </div>
                 )
