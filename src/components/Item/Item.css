@@ -17,12 +17,12 @@
   width: '18rem' !important;
   color : black;
   overflow: hidden;
-  box-shadow: 0 2px 20px gray !important;
   border-radius: 10px;
   display: flex;
   justify-content: space-evenly;
   cursor: pointer;
   transition: transform 200ms ease-in;
+  box-shadow: 0 2px 20px rgb(83, 83, 83) !important;
 }
 
 .normalizeItem{

@@ -46,6 +46,7 @@ export default function CheckOut() {
              order.buyer.state === '' ||
              order.buyer.email === '' ||
              order.buyer.phone === '' ) 
+             
         return setState({
             orderId: null,
             error: null,
@@ -69,41 +70,40 @@ export default function CheckOut() {
         const db = getFirestore()
         const orders = db.collection("orders");
         orders.add(miOrden)
-            .then(({ id }) => {
+            .then( ({id}) => {
+                updateStock(miOrden.items)
                 setState({
                     orderId: id,
                     error: null,
-                    badInput: null
-                })
-                updateStock(miOrden.items)
+                    badInput: null })
             })
-            .catch((err) => {
+            .catch( err => {
                 setState({
                     orderId: null,
                     error: `Ocurrio un error al enviar la orden: ${err}. Inténtelo nuevamente`,
-                    badInput: null
-                })
+                    badInput: null })
             });
     }
 
     function updateStock(items){
-        const db = getFirestore()
+        const db = getFirestore();
         const products = db.collection("products");
+        const batch = db.batch();
 
         items.forEach( item => {
             const product = products.doc(item.product.id);
             const newStock = item.product.stock - item.quantity
-            
-            product.update({stock: newStock})
-            .then(() => console.log('Cambió el stock!'))
-            .catch((err) => {
-                setState({
-                    orderId: null,
-                    error: `Ocurrió un error al actualizar el stock: ${err}. Inténtelo nuevamente`,
-                    badInput: null
-                })
-            })
-        })   
+            batch.update(product, {stock: newStock});
+        })  
+        
+        batch.commit()
+        .then(r => console.log(`Se ha actualizado el batch de productos!`))
+        .catch( err => {
+            setState({
+                orderId: null,
+                error: `Ocurrio un error al intentar actualizar la base de datos: ${err}.`,
+                badInput: null })
+        });
     }
 
     return (
