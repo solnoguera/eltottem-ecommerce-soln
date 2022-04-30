@@ -6,6 +6,7 @@ export default function CartProvider ({children}){
   
     const [cart, setCart] = useState([])
     const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(true)
   
     const addToCart = (product, quantity) => {
         
@@ -60,8 +61,10 @@ export default function CartProvider ({children}){
   
     return (
         <context.Provider 
-            value={{cart, addToCart, deleteFromCart, cleanCart, oneItemMore, oneItemLess, totalPrice, totalItems, error, setError}}>
+            value={{cart, addToCart, deleteFromCart, cleanCart, oneItemMore, oneItemLess, totalPrice, totalItems, error, setError, loading, setLoading}}>
             {children}
         </context.Provider>
     );
 };
+
+//store conjunto de reducers,

@@ -9,7 +9,7 @@ export default function ItemList ({products, greeting}) {
       <p className='greeting'>{greeting}</p>
       <div className="wrapper">
           {
-            products.map(product =><Item item={product} key={product.id} />)
+            products?.map(product =><Item item={product} key={product.id} />)
           }
       </div>
     </>

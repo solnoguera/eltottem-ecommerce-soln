@@ -4,8 +4,6 @@ import { NavLink } from "react-router-dom";
 import NavDropDown from "../NavDropDown/NavDropDown";
 import CartWidget from "../CartWidget/CartWidget";
 import useFirestoreCollection from "../../hooks/useFirestoreCollection";
-import Loading from "../Loading/Loading";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import logo from "../../assets/tottemlogo.png";
 import "./NavBar.css";
 
@@ -15,12 +13,8 @@ export default function NavBar() {
   return (
     <div>
       {
-        error ? 
-        <ErrorMessage error={error}/>
-        :
-        loading ? 
-        <Loading />
-        :
+        !error && !loading && 
+        
         <Navbar variant="light" expand="lg" className="nav">
           <Container>
             <NavLink to={"/"} className="normalizeBlackLink">

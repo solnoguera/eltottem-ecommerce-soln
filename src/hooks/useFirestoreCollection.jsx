@@ -5,12 +5,11 @@ import { context } from "../context/CartProvider";
 export default function useFirestoreCollection (nameCollection, categoryName = null) {
 
     const [collection, setCollection] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const {error, setError} = useContext(context)
+    const {error, setError, loading, setLoading} = useContext(context)
 
     useEffect(() => {
         setLoading(true);
-        getFirestore().collection("nameCollection")
+        getFirestore().collection(nameCollection)
             .get()
             .then( (querySnapshot) => {
 
@@ -20,13 +19,13 @@ export default function useFirestoreCollection (nameCollection, categoryName = n
                     const products = querySnapshot.docs.map(doc=> {
                         return {id: doc.id, ...doc.data()} })
             
-                    const misProductos = (categoryName)   
-                                            ? products.filter(item => item.category === categoryName) 
-                                            : products
+                    const misProductos = (categoryName)? 
+                                products.filter(item => item.category === categoryName) 
+                                : products
                     setCollection(misProductos)
                 }
             } )
-            .catch( err => setError('Error al buscar los productos: ' + err ) )
+            .catch( err => setError('Error al conectar con Firebase: ' + err ) )
             .finally(()=> setLoading(false))
 
     }, [nameCollection, categoryName])

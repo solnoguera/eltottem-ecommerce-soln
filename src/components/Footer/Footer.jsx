@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useContext} from "react";
+import { context } from "../../context/CartProvider";
 import { Col, Row, Image } from "react-bootstrap";
 import logo from '../../assets/tottemlogo.png'
 import phone from '../../assets/phone.png'
@@ -6,7 +7,14 @@ import location from '../../assets/location.png'
 import './Footer.css'
 
 export default function Footer(){
+
+    const {error, loading} = useContext(context)
+
     return(
+        <div>
+        {
+            !error && !loading &&
+
             <Row className='footer-container'>
                 <Col sm={6} className='col-img'>
                     <Image src={logo} fluid rounded></Image>
@@ -28,6 +36,8 @@ export default function Footer(){
                 </Col>
                 <h5 className='rights'>All Rights Reserved. © 2022 <span>El Totem Muñiz</span></h5>
             </Row>
-
+        }
+            
+        </div>
     )
 }

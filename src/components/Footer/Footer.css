@@ -3,14 +3,15 @@
     height: 200px;
     margin: 0px;
     margin-top: 100px;
-    background-color: white;
+    background-color: white !important;
 }
 .col-img{
     padding: 40px;
+    background-color: white
 }
 .col-info{
-    margin: 40px 0px;
-    padding: 10px;
+    padding: 50px 0px;
+    background-color: white
 }
 .col-info > span {
     font-size: 18px;
