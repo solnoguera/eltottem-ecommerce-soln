@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,11 +8,11 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart'
 import CartProvider from './context/CartProvider';
 import CheckOut from './components/CheckOut/CheckOut'
-import Slider from './components/Slider/Slider';
 import About from './components/About/About';
-import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
 
 function App() {
+  
   return (
     <div className="App">
       <CartProvider>
@@ -19,9 +20,7 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path='/'>
-              <Slider />
-              <ItemListContainer greeting="Disfrutá de la calidad de nuestros productos!" />
-              <Footer />
+              <Home greeting="Disfrutá de la calidad de nuestros productos!"/>
             </Route>
             <Route path='/category/:categoryName'>
               <ItemListContainer greeting="Bienvenido a El Tottem!" />

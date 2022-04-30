@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { getFirestore } from "../firebase/Firebase";
+import { context } from "../context/CartProvider";
 
 export default function useFirestoreItem (nameCollection, itemId) {
 
     const [item, setItem] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null)
+    const {error, setError} = useContext(context)
 
     useEffect(() => {
         setLoading(true);

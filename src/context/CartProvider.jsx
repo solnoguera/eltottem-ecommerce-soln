@@ -5,6 +5,7 @@ export const context = createContext()
 export default function CartProvider ({children}){
   
     const [cart, setCart] = useState([])
+    const [error, setError] = useState(null)
   
     const addToCart = (product, quantity) => {
         
@@ -59,7 +60,7 @@ export default function CartProvider ({children}){
   
     return (
         <context.Provider 
-            value={{cart, addToCart, deleteFromCart, cleanCart, oneItemMore, oneItemLess, totalPrice, totalItems}}>
+            value={{cart, addToCart, deleteFromCart, cleanCart, oneItemMore, oneItemLess, totalPrice, totalItems, error, setError}}>
             {children}
         </context.Provider>
     );
