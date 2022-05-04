@@ -5,11 +5,9 @@ import Router from './components/Router/Router.jsx'
 
 function App() {
   return (
-    <div className="App">
-      <CartProvider> 
-        <Router />
-      </CartProvider>
-    </div>
+    <CartProvider> 
+      <Router />
+    </CartProvider>
   );
 }
 

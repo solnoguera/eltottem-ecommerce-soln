@@ -22,7 +22,6 @@ export default function ItemDetail({ item }) {
 
     return (
         <Container fluid >
-
             <Row className='row'>
 
                 <Col className='col-imagen' sm={6}>
@@ -33,24 +32,19 @@ export default function ItemDetail({ item }) {
                     <h2>{title}</h2>
                     <h3>${price}</h3>
                     {
-                        (description)?
-                        <p>{description}</p>
-                        :
-                        <></>
+                        (description) && <p>{description}</p>
                     }
-                    
+                    <div>
                     {
-                        (!added)?
-                        <ItemCount initial={initial} stock={stock} onAdd={onAdd}/>
-                        :
+                        (added)?
                         <GoToCart cantidad={added}/>
+                        :
+                        <ItemCount initial={initial} stock={stock} onAdd={onAdd}/>
+                        
                     }
-                    
-                    
+                    </div>
                 </Col>
-
             </Row>
-
         </Container>
     );
 };

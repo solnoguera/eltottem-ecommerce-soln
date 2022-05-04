@@ -42,7 +42,7 @@ export default function NavBar() {
                   </NavLink>
                 </Nav.Link>
 
-                <NavDropDown title="Productos" categories={collection} />
+                <NavDropDown title="Categorías" categories={collection} />
                 
               </Nav>
             </Navbar.Collapse>

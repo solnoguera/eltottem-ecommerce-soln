@@ -1,9 +1,24 @@
 .boton{
-    margin: 3% 2%;
-    border: 1px black solid;
+    margin: 3% 3% 3% 0%;
+    border: 1px rgb(34, 34, 34) solid;
+    box-shadow: 5px 5px 5px rgb(100, 100, 100);
+    border-radius: 6px;
 }
 
 .containerCart{
-    margin: 3%;
+    margin: 5% 10%;
+    padding: 3%;
     text-align: center;
+    background-color: white;
+    border-radius: 18px;
+}
+
+.containerCart > h2, h3 {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.botones{
+    padding: 15px 0px;
+    margin: 0% 5%;
 }

@@ -5,18 +5,18 @@ import './GoToCart.css'
 
 export default function GoToCart ({cantidad}) {
   return (
-        <div className='container-checkout'>
-                <h5>
+        <div className='go-to-cart'>
+                <p>
                     { (cantidad === 1)   ? 
-                    `Listo! Ya agregaste tu producto al carrito.`
+                    `Ya agregaste tu producto al carrito.`
                     : 
-                    `Listo! Ya agregaste tus ${cantidad} productos al carrito.`}
+                    `Ya agregaste tus ${cantidad} productos al carrito.`}
                     
-                </h5>
+                </p>
                 <div className='buttons'>
                     <NavLink to={'/cart'}>
-                        <Button className='go-to-cart' variant='danger'>
-                            Ir al Carrito 
+                        <Button className='go-to-cart-button' variant='danger'>
+                            Ver Carrito 
                         </Button>
                     </NavLink>
 

@@ -11,7 +11,7 @@ export default function Item({ item }) {
 
     return (
         <NavLink to={link} className='normalizeItem'> 
-            <Card className='producto'>
+            <Card className='card-producto'>
                 <Card.Img variant="top" src={image || iconDefault}/>
                 <Card.Body className='cardContent'>
                     <Card.Title>{title}</Card.Title>

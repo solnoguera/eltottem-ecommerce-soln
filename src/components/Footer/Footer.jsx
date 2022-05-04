@@ -1,29 +1,26 @@
 import React, {useContext} from "react";
-import { context } from "../../context/CartProvider";
 import { Col, Row, Image } from "react-bootstrap";
 import logo from '../../assets/tottemlogo.png'
 import phone from '../../assets/phone.png'
 import location from '../../assets/location.png'
+import { context } from "../../context/CartProvider";
 import './Footer.css'
 
 export default function Footer(){
-
     const {error, loading} = useContext(context)
-
     return(
         <div>
         {
-            !error && !loading &&
-
+            !error && !loading && 
             <Row className='footer-container'>
                 <Col sm={6} className='col-img'>
                     <Image src={logo} fluid rounded></Image>
                 </Col>
 
-                <Col sm={6} className='col-info'>
+                <Col className='col-info'>
                     <h4>Contactanos</h4>
                     <img src={location} alt="celular" width='30px' height='30px' />
-                    <span>Av. Presidente Perón 333, Muñiz, San Miguel, Bs. As.</span>
+                    <span>Av. Pte. Perón 333, Muñiz, San Miguel, Bs. As.</span>
                     <br />
                     <img src={phone} alt="celular" width='35px' height='35px' />
                     <span>1132479932</span>
@@ -37,7 +34,6 @@ export default function Footer(){
                 <h5 className='rights'>All Rights Reserved. © 2022 <span>El Totem Muñiz</span></h5>
             </Row>
         }
-            
         </div>
     )
 }

@@ -10,7 +10,7 @@
     margin-bottom: 30px;
 }
 .col-imagen{
-    margin: 35px 0px;
+    margin: 45px 0px;
 }
 .col-imagen > p{
     text-align: center;
@@ -21,6 +21,10 @@
     font-weight: 600;
     margin-bottom: 15px;
 }
-.margin-horarios{
-    margin: 40px 0px 30px 0px;
+.titulo-horarios{
+    margin: 30px 0px;
+}
+.horarios{
+    background-color: #ffffff;
+    border: 1px solid rgba(128, 128, 128, 0.582);
 }

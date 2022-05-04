@@ -17,11 +17,11 @@ export default function Router() {
         <Switch>
         <Route exact path={routes.main}>
             <Slider />
-            <ItemListContainer greeting="Disfrutá de la calidad de nuestros productos!" />
+            <ItemListContainer greeting="Te damos la bienvenida a la Tienda Online El Tottem Muñiz!" />
             <Footer />
         </Route>
         <Route path={routes.category}>
-            <ItemListContainer greeting="Bienvenido a El Tottem!" />
+            <ItemListContainer greeting="Disfrutá de la calidad de nuestros productos!" />
         </Route>
         <Route path={routes.item}>
             <ItemDetailContainer />

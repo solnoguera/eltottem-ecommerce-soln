@@ -5,10 +5,6 @@
 html, #root{
   background-color: #eeeeee;
 }
-.App {
-  min-height: 100vh;
-  font-size: calc(10px + 2vmin);
-}
 
 .normalizeBlackLink{
   color: rgba(66, 39, 39, 0.904);

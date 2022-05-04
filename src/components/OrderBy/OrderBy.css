@@ -1,0 +1,9 @@
+.order-by{
+    padding: 10px 0px 26px 26px;
+}
+.order-by > label{
+    padding-right: 10px;
+}
+.width{
+    width: 70px
+}

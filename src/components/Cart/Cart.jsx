@@ -13,28 +13,36 @@ export default function Cart() {
     <div className='containerCart'>
       {
         (cart.length === 0) ?
-          <div >
+          <div>
             <h2>Parece que tu carrito esta vacío.</h2>
             <br/>
-            <NavLink to={'/'} style={{color:'black'}}>Ir a comprar</NavLink>
+            <NavLink to={'/'} className="normalizeBlackLink">Click aquí para ir a comprar</NavLink>
           </div>
           :
           <>
-            <h2>Tu Carrito</h2> 
+            <h2>Mi Pedido</h2> 
             {
               cart.map(item => <CartItem product={item.product} quantity={item.quantity} key={item.product.id}/>)
             }
-             <NavLink to={'/checkout'}>
-              <Button variant='danger' className='boton'>
-                Continuar
+            <div className='botones'> 
+              <Button variant='light' onClick={()=>cleanCart()} className='boton'>
+                Vaciar Carrito
               </Button>
-            </NavLink>
 
-            <Button variant='light' onClick={()=>cleanCart()} className='boton'>
-              Vaciar Carrito
-            </Button>
+              <NavLink to={'/'}>
+                <Button variant='light' className='boton'>
+                  Seguir Comprando
+                </Button>
+              </NavLink>
+              
+              <NavLink to={'/checkout'}>
+                <Button variant='danger' className='boton'>
+                  Continuar
+                </Button>
+              </NavLink>
+            </div>
 
-            <h3>Total: ${totalPrice()}</h3>
+          <h3>Precio Total: ${totalPrice()}</h3>
           </>
       }
       

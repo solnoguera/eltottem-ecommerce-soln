@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { getFirestore } from '../../firebase/Firebase';
 import { context } from '../../context/CartProvider';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import checkInputs from '../../helpers/checkInputs';
 import './CheckOut.css'
 
 export default function CheckOut() {
@@ -35,35 +36,18 @@ export default function CheckOut() {
                 email: emailRef.current.value,
                 phone: mobileRef.current.value,
             },
-            items: cart,
-            total: totalPrice(),
+            items: cart || [],
+            total: totalPrice() || 0,
             date: firebase.firestore.Timestamp.fromDate(new Date())
         }
-
-        if ( order.buyer.name === '' ||
-             order.buyer.address === '' ||
-             order.buyer.city === '' ||
-             order.buyer.state === '' ||
-             order.buyer.email === '' ||
-             order.buyer.phone === '' ) 
-             
-        return setState({
-            orderId: null,
-            error: null,
-            badInput: 'Debes completar todos los campos para continuar.'
-        })
-
-        const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-        
-        if (!emailRegex.test(order.buyer.email)) 
-        return setState({
-            orderId: null,
-            error: null,
-            badInput: 'El email ingresado no es válido.'
-        })
-
-        sendOrder(order)
-        cleanCart()
+        let badInput = checkInputs(order.buyer)
+        if(badInput){
+            setState({ orderId: null, error: null, badInput })
+        } else {
+            sendOrder(order)
+            cleanCart()
+        }
+            
     }
 
     function sendOrder(miOrden){
@@ -72,17 +56,15 @@ export default function CheckOut() {
         orders.add(miOrden)
             .then( ({id}) => {
                 updateStock(miOrden.items)
-                setState({
-                    orderId: id,
-                    error: null,
-                    badInput: null })
+                setState({  orderId: id,
+                            error: null,
+                            badInput: null })
             })
-            .catch( err => {
-                setState({
-                    orderId: null,
-                    error: `Ocurrio un error al enviar la orden: ${err}. Inténtelo nuevamente`,
-                    badInput: null })
-            });
+            .catch( err => setState({
+                            orderId: null,
+                            error: `Ocurrio un error al enviar la orden: ${err}. Inténtelo nuevamente`,
+                            badInput: null })
+            );
     }
 
     function updateStock(items){
@@ -97,7 +79,7 @@ export default function CheckOut() {
         })  
         
         batch.commit()
-        .then(r => console.log(`Se ha actualizado el batch de productos!`))
+        .then(()=> console.log(`Se ha actualizado el batch de productos!`))
         .catch( err => {
             setState({
                 orderId: null,
@@ -106,43 +88,37 @@ export default function CheckOut() {
         });
     }
 
-    return (
+    const inputs = [{name : "name", ref : nameRef, placeholder : "Nombre y Apelllido"},
+                    {name : "phone", ref : mobileRef, placeholder : "Nro de Celular"},
+                    {name : "email", ref : emailRef, placeholder : "Email"},
+                    {name : "state", ref : stateRef, placeholder : "Provincia"},
+                    {name : "city", ref : cityRef, placeholder : "Ciudad"},
+                    {name : "adress", ref : addressRef, placeholder : "Dirección"}]
 
+    return (
         <>
             {
             state.error ?
             <ErrorMessage error={state.error}/>
             :
             <div className='containerCheckOut'>
-                <h3 className='margin'>Ingresá tus datos:</h3>
+                <h3 className='margin'>Para continuar, debes ingresar tus datos:</h3>
 
-                <input type="text" name="name" ref={nameRef} placeholder="Nombre y Apelllido" />
-                <br />
-
-                <input type="text" name="phone" ref={mobileRef} placeholder="Nro de Celular" />
-                <br />
-
-                <input type="text" name="email" ref={emailRef} placeholder="Email" />
-                <br />
-
-                <input type="text" name="state" ref={stateRef} placeholder="Provincia" />
-                <br />
-
-                <input type="text" name="city" ref={cityRef} placeholder="Ciudad" />
-                <br />
-
-                <input type="text" name="address" ref={addressRef} placeholder="Direccion" />
-                <br />
+                {
+                    inputs.map((input)=> <Input name={input.name} ref={input.ref} placeholder={input.placeholder}/>)
+                }
+                
                 <div id='sendOrder'>
                     {state.badInput && (<p>{state.badInput}</p>)}
                     {state.orderId ?
                         <> 
-                            <h3>Felicidades! Se ha creado correctamente tu orden: {state.orderId}</h3>
+                            <h3>Muchas gracias por tu compra!</h3> 
+                            <h5>Se ha enviado correctamente tu orden.</h5>
                             <NavLink to={'/'} style={{color:'black'}}>Volver al inicio</NavLink>
                         </>
                         :
-                        <Button variant='light' onClick={() => handleClick()} className='border'>
-                            Vamos!
+                        <Button variant='danger' onClick={() => handleClick()} className='enviar-pedido'>
+                            Enviar Pedido
                         </Button>
                     }
                 </div>
@@ -154,3 +130,12 @@ export default function CheckOut() {
     );
 
 };
+
+const Input = React.forwardRef(({name, placeholder}, ref) => {
+    return (
+        <>
+            <input type="text" name={name} ref={ref} placeholder={placeholder}/>
+            <br />
+        </>
+    )
+})
