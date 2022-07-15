@@ -1,13 +1,13 @@
-.items{
-    margin: 40px;
+.items {
+  margin: 40px;
 }
-.top-items{
-    display: flex;
-    padding: 14px 20px;
+.top-items {
+  display: flex;
+  padding: 14px 20px;
 }
-.greeting{
-    color: black;
-    font-size: 28px;
-    padding-bottom: 40px;
-    text-align: center;
+.greeting {
+  color: black;
+  font-size: 20px;
+  padding-bottom: 10px;
+  text-align: center;
 }

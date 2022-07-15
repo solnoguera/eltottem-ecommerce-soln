@@ -1,41 +1,41 @@
-import React from 'react'
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
-import NavBar from '../NavBar/NavBar';
-import ItemListContainer from '../ItemListContainer/ItemListContainer';
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
-import Cart from '../Cart/Cart'
-import CheckOut from '../CheckOut/CheckOut'
-import Slider from '../Slider/Slider';
-import About from '../About/About';
-import Footer from '../Footer/Footer';
-import routes from '../../routes'
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import NavBar from "../NavBar/NavBar";
+import ItemListContainer from "../ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
+import Cart from "../Cart/Cart";
+import CheckOut from "../CheckOut/CheckOut";
+import Slider from "../Slider/Slider";
+import About from "../About/About";
+import Footer from "../Footer/Footer";
+import routes from "../../routes";
 
 export default function Router() {
   return (
-    <BrowserRouter> 
-        <NavBar />
-        <Switch>
+    <BrowserRouter>
+      <NavBar />
+      <Switch>
         <Route exact path={routes.main}>
-            <Slider />
-            <ItemListContainer greeting="Te damos la bienvenida a la Tienda Online El Tottem Muñiz!" />
-            <Footer />
+          <Slider />
+          <ItemListContainer greeting="Te damos la bienvenida a la Tienda Online El Tottem Muñiz!" />
+          <Footer />
         </Route>
         <Route path={routes.category}>
-            <ItemListContainer greeting="Disfrutá de la calidad de nuestros productos!" />
+          <ItemListContainer greeting="Disfrutá de la calidad de nuestros productos!" />
         </Route>
         <Route path={routes.item}>
-            <ItemDetailContainer />
+          <ItemDetailContainer />
         </Route>
         <Route exact path={routes.cart}>
-            <Cart />
+          <Cart />
         </Route>
         <Route exact path={routes.checkout}>
-            <CheckOut />
+          <CheckOut />
         </Route>
         <Route exact path={routes.about}>
-            <About />
+          <About />
         </Route>
-        </Switch>
+      </Switch>
     </BrowserRouter>
-  )
+  );
 }
