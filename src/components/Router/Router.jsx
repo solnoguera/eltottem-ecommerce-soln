@@ -9,6 +9,7 @@ import Slider from "../Slider/Slider";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 import routes from "../../routes";
+import Auth from "../Auth/Auth";
 
 export default function Router() {
   return (
@@ -34,6 +35,9 @@ export default function Router() {
         </Route>
         <Route exact path={routes.about}>
           <About />
+        </Route>
+        <Route exact path={routes.auth}>
+          <Auth />
         </Route>
       </Switch>
     </BrowserRouter>

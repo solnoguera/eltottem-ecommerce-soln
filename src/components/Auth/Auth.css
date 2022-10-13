@@ -1,0 +1,27 @@
+.containerAuth {
+  margin: 6% 10%;
+  text-align: center;
+}
+
+.inputsAuth {
+  padding: 30px;
+  margin: 0px 30%;
+}
+.inputsAuth > input {
+  width: 100%;
+}
+.botonChange {
+  margin-top: 15px;
+}
+.errorMsg {
+  color: red;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 15px;
+  text-align: left;
+}
+@media screen and (max-width: 980px) {
+  .inputsAuth {
+    margin: 0;
+  }
+}
